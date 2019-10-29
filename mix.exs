@@ -1,9 +1,9 @@
-defmodule AdventOfCode2018.MixProject do
+defmodule AdventOfCode2019.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :advent_of_code_2018,
+      app: :advent_of_code_2019,
       version: "0.1.0",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,

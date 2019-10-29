@@ -1,4 +1,4 @@
-defmodule AdventOfCode2018.Day18 do
+defmodule AdventOfCode2019.Day18 do
   def part1(args) do
   end
 

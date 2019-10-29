@@ -1,5 +1,5 @@
-defmodule AdventOfCode2018 do
+defmodule AdventOfCode2019 do
   @moduledoc """
-  Documentation for AdventOfCode2018.
+  Documentation for AdventOfCode2019.
   """
 end
