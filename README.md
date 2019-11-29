@@ -9,6 +9,7 @@ There are 25 modules, 25 tests, and 50 mix tasks.
 1. Fill in the tests with the example solutions.
 1. Write your implementation.
 1. Fill in the final problem inputs into the mix task and run `mix d01.p1`!
+    - Benchmark your solution by passing the `-b` flag, `mix d01.p1 -b`
 
 ```elixir
 defmodule AdventOfCode2019.Day01 do
@@ -51,12 +52,15 @@ defmodule Mix.Tasks.D01.P1 do
   import AdventOfCode2019.Day01
 
   @shortdoc "Day 01 Part 1"
-  def run(_) do
+  def run(args) do
     input = nil
 
-    input
-    |> part1()
-    |> IO.inspect(label: "Part 1 Results") 
+    if Enum.member?(args, "-b"),
+      do: Benchee.run(%{part_1: fn -> input |> part1() end}),
+      else:
+        input
+        |> part1()
+        |> IO.inspect(label: "Part 1 Results")
   end
 end   
 ```

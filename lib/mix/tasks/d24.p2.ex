@@ -4,11 +4,14 @@ defmodule Mix.Tasks.D24.P2 do
   import AdventOfCode2019.Day24
 
   @shortdoc "Day 24 Part 2"
-  def run(_) do
+  def run(args) do
     input = nil
 
-    input
-    |> part2() 
-    |> IO.inspect(label: "Part 2 Results") 
+    if Enum.member?(args, "-b"),
+      do: Benchee.run(%{part_2: fn -> input |> part2() end}),
+      else:
+        input
+        |> part2()
+        |> IO.inspect(label: "Part 2 Results")
   end
-end   
+end
