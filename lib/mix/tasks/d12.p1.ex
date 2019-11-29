@@ -1,7 +1,7 @@
 defmodule Mix.Tasks.D12.P1 do
   use Mix.Task
 
-  import AdventOfCode2019.Day12
+  import AdventOfCode.Day12
 
   @shortdoc "Day 12 Part 1"
   def run(args) do

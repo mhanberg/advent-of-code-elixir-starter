@@ -12,7 +12,7 @@ There are 25 modules, 25 tests, and 50 mix tasks.
     - Benchmark your solution by passing the `-b` flag, `mix d01.p1 -b`
 
 ```elixir
-defmodule AdventOfCode2019.Day01 do
+defmodule AdventOfCode.Day01 do
   def part1(args) do
   end
 
@@ -22,10 +22,10 @@ end
 ```
 
 ```elixir
-defmodule AdventOfCode2019.Day01Test do
+defmodule AdventOfCode.Day01Test do
   use ExUnit.Case
 
-  import AdventOfCode2019.Day01
+  import AdventOfCode.Day01
 
   @tag :skip # Make sure to remove to run your test.
   test "part1" do
@@ -49,7 +49,7 @@ end
 defmodule Mix.Tasks.D01.P1 do
   use Mix.Task
 
-  import AdventOfCode2019.Day01
+  import AdventOfCode.Day01
 
   @shortdoc "Day 01 Part 1"
   def run(args) do
