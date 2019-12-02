@@ -25,6 +25,3 @@ for day <- 1..25 do
     )
   end
 end
-
-
-{:%{}, [], [test: 1]}
