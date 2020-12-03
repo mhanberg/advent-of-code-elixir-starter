@@ -9,6 +9,7 @@ config :advent_of_code, AdventOfCode.Inputs,
 #
 # config :advent_of_code, AdventOfCode.Inputs,
 #   advent_of_code_session_cookie: "session=..."
+
 try do
   import_config "secrets.exs"
 rescue
