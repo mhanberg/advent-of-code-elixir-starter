@@ -7,7 +7,7 @@
 			"VARIANT": "1.7.3",
 		}
 	},
-	"workspaceFolder": "/workspace",
+	// "workspaceFolder": "/workspace",
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
