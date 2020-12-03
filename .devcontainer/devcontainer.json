@@ -1,0 +1,28 @@
+{
+	"name": "Elixir",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			// Update 'VARIANT' to pick a Elixir version: 1.10
+			"VARIANT": "latest",
+		}
+	},
+	// "workspaceFolder": "/workspace",
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/zsh"
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [4000, 4001],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "mix deps.get"
+
+	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	// "remoteUser": "vscode"
+}
