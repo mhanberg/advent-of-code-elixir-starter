@@ -14,10 +14,10 @@ defmodule AdventOfCode.Input do
   cache, it will be retrieved from the server if `allow_network?: true` is
   configured and your cookie is setup.
   """
-  def get_input!(day, year \\ nil)
-  def get_input!(day, nil), do: get_input!(day, default_year())
+  def get!(day, year \\ nil)
+  def get!(day, nil), do: get_input!(day, default_year())
 
-  def get_input!(day, year) do
+  def get!(day, year) do
     cond do
       in_cache?(day, year) -> from_cache!(day, year)
       allow_network?() -> download!(day, year)
@@ -30,9 +30,9 @@ defmodule AdventOfCode.Input do
   your cache so you can re-fetch it, this will save your bacon.
   Please don't use this to retrieve the input from the server repeatedly!
   """
-  def delete_input!(day, year \\ nil)
-  def delete_input!(day, nil), do: delete_input!(day, default_year())
-  def delete_input!(day, year), do: File.rm!(cache_path(day, year))
+  def delete!(day, year \\ nil)
+  def delete!(day, nil), do: delete_input!(day, default_year())
+  def delete!(day, year), do: File.rm!(cache_path(day, year))
 
   defp cache_path(day, year), do: Path.join(cache_dir(), "/#{year}/#{day}.aocinput")
   defp in_cache?(day, year), do: File.exists?(cache_path(day, year))
