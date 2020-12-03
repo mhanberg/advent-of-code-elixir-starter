@@ -4,7 +4,7 @@
 		"dockerfile": "Dockerfile",
 		"args": {
 			// Update 'VARIANT' to pick a Elixir version: 1.10
-			"VARIANT": "1.7.3",
+			"VARIANT": "latest",
 		}
 	},
 	// "workspaceFolder": "/workspace",
