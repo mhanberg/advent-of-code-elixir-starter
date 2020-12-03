@@ -48,7 +48,7 @@ defmodule AdventOfCode.Inputs do
 
   defp download!(day, year) do
     {:ok, {{'HTTP/1.1', 200, 'OK'}, [], input}} =
-      :httpc.request(:get, {'http://google.com', headers()}, [], [])
+      :httpc.request(:get, {'https://adventofcode.com/#{year}/day/#{day}/input', headers()}, [], [])
 
     store_in_cache!(day, year, input)
     input
