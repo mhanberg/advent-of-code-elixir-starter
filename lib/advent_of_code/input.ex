@@ -19,9 +19,14 @@ defmodule AdventOfCode.Input do
 
   def get!(day, year) do
     cond do
-      in_cache?(day, year) -> from_cache!(day, year)
-      allow_network?() -> download!(day, year)
-      true -> raise "Cache miss for day #{day} of year #{year} and `:allow_network?` is not `true`"
+      in_cache?(day, year) ->
+        from_cache!(day, year)
+
+      allow_network?() ->
+        download!(day, year)
+
+      true ->
+        raise "Cache miss for day #{day} of year #{year} and `:allow_network?` is not `true`"
     end
   end
 
@@ -47,7 +52,12 @@ defmodule AdventOfCode.Input do
 
   defp download!(day, year) do
     {:ok, {{'HTTP/1.1', 200, 'OK'}, _, input}} =
-      :httpc.request(:get, {'https://adventofcode.com/#{year}/day/#{day}/input', headers()}, [], [])
+      :httpc.request(
+        :get,
+        {'https://adventofcode.com/#{year}/day/#{day}/input', headers()},
+        [],
+        []
+      )
 
     store_in_cache!(day, year, input)
     input
@@ -57,7 +67,7 @@ defmodule AdventOfCode.Input do
     config()
     |> Keyword.get(
       :cache_dir,
-      (System.get_env("XDG_CACHE_HOME") || "~/.cache") <> "/advent_of_code_inputs"
+      Path.join((System.get_env("XDG_CACHE_HOME") || "~/.cache") <> "/advent_of_code_inputs")
     )
     |> Path.expand()
   end
@@ -71,5 +81,7 @@ defmodule AdventOfCode.Input do
 
   defp config, do: Application.get_env(:advent_of_code, __MODULE__)
   defp allow_network?, do: Keyword.get(config(), :allow_network?, false)
-  defp headers, do: [{'cookie', String.to_charlist(Keyword.get(config(), :advent_of_code_session_cookie))}]
+
+  defp headers,
+    do: [{'cookie', String.to_charlist(Keyword.get(config(), :advent_of_code_session_cookie))}]
 end
