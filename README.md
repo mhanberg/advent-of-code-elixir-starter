@@ -101,7 +101,7 @@ $ git clone git@github.com:mhanberg/advent-of-code-elixir-starter.git advent-of-
 $ cd advent-of-code
 
 # Reinitialize your git repo
-$ rm -rf .git
+$ rm -rf .git && rm -rf .github
 $ git init
 ```
 ### Get started coding with zero configuration
