@@ -75,6 +75,8 @@ enable it. You can do this by creating a `config/secrets.exs` file containing
 the following:
 
 ```elixir
+use Mix.Config
+
 config :advent_of_code, AdventOfCode.Input,
   allow_network?: true,
   session_cookie: "..." # yours will be longer
