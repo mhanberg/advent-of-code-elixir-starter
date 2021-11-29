@@ -7,8 +7,9 @@ config :advent_of_code, AdventOfCode.Input,
 # If you don't like environment variables, put your cookie in
 # a `config/secrets.exs` file like this:
 #
+# use Mix.Config
 # config :advent_of_code, AdventOfCode.Input,
-#   advent_of_code_session_cookie: "session=..."
+#   session_cookie: "..."
 
 try do
   import_config "secrets.exs"
