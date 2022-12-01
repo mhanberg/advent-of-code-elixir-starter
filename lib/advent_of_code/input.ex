@@ -84,7 +84,7 @@ defmodule AdventOfCode.Input do
 
   defp headers,
     do: [
-      {'user-agent', 'github.com/mhanberg/advent-of-code-elixir-starter'},
+      {'user-agent', 'github.com/mhanberg/advent-of-code-elixir-starter by aoc@mitchellhanberg.com'},
       {'cookie', String.to_charlist("session=" <> Keyword.get(config(), :session_cookie))}
     ]
 end
